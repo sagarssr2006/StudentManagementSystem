@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Student Database Management System</title>
+  
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth-body">
+
+  <!-- Ambient Background Glowing Orbs -->
+  <div class="auth-ambient-bg">
+    <div class="auth-orb auth-orb-1"></div>
+    <div class="auth-orb auth-orb-2"></div>
+  </div>
+
+  <!-- Centered Login Card -->
+  <div class="auth-card-wrap">
+    <div class="auth-card">
+      
+      <!-- Top Action Bar (Brand + Theme Toggle) -->
+      <div class="auth-topbar-actions">
+        <div class="auth-brand">
+          <div class="auth-brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="auth-brand-text">
+            <h3>Student System</h3>
+            <span>Database Management</span>
+          </div>
+        </div>
+
+        <button class="icon-button" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle dark/light theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+      </div>
+
+      <!-- Header -->
+      <div class="auth-header">
+        <h1>Sign In</h1>
+        <p>Access and manage student records, courses, and guidance.</p>
+      </div>
+
+      <!-- Open Authentication Notice -->
+      <div class="auth-info-banner">
+        <i class="fa-solid fa-circle-check"></i>
+        <div class="auth-info-banner-text">
+          <strong>Open Authentication:</strong> Enter any User ID and Password. The system accepts any credentials and customizes the workspace to your name.
+        </div>
+      </div>
+
+      <!-- Login Form -->
+      <form class="auth-form" id="loginForm" autocomplete="on">
+        
+        <!-- User ID / Name -->
+        <div class="auth-form-group">
+          <label for="authUsername">
+            <span>User ID or Name</span>
+            <span class="label-hint">Any name accepted</span>
+          </label>
+          <div class="auth-input-wrapper">
+            <i class="fa-solid fa-user auth-input-icon"></i>
+            <input 
+              type="text" 
+              class="auth-input" 
+              id="authUsername" 
+              name="username"
+              placeholder="e.g. Admin, John, Prof. Sharma" 
+              required 
+              autofocus
+            >
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="auth-form-group">
+          <label for="authPassword">
+            <span>Password</span>
+            <span class="label-hint">Any password accepted</span>
+          </label>
+          <div class="auth-input-wrapper">
+            <i class="fa-solid fa-lock auth-input-icon"></i>
+            <input 
+              type="password" 
+              class="auth-input" 
+              id="authPassword" 
+              name="password"
+              placeholder="Enter any password..." 
+              required
+            >
+            <button type="button" class="auth-toggle-pwd-btn" id="togglePwdBtn" aria-label="Toggle password visibility">
+              <i class="fa-regular fa-eye" id="togglePwdIcon"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Options Row -->
+        <div class="auth-row-options">
+          <label class="auth-checkbox-label">
+            <input type="checkbox" id="rememberMe" checked>
+            <span>Remember session</span>
+          </label>
+          <span style="font-size: 11.5px; color: var(--text-muted);"><i class="fa-solid fa-lock"></i> Direct Access</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary auth-submit-btn" id="loginSubmitBtn">
+          <span id="btnText">Sign In to System</span>
+          <i class="fa-solid fa-arrow-right" id="btnIcon"></i>
+        </button>
+      </form>
+
+      <!-- Quick Preset Profiles -->
+      <div class="quick-profiles-section">
+        <div class="quick-profiles-title">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Or Quick Sign-In As:</span>
+        </div>
+        <div class="quick-chips-grid">
+          <button type="button" class="quick-user-chip" data-user="Admin">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Admin</span>
+          </button>
+          <button type="button" class="quick-user-chip" data-user="Prof. Sharma">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <span>Prof. Sharma</span>
+          </button>
+          <button type="button" class="quick-user-chip" data-user="Staff Member">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Staff Member</span>
+          </button>
+          <button type="button" class="quick-user-chip" data-user="Aryan (Student)">
+            <i class="fa-solid fa-user-graduate"></i>
+            <span>Aryan (Student)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Direct Link -->
+      <div class="auth-footer-link">
+        <a href="dashboard.html" id="skipToDashLink">Skip to Dashboard as Guest <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i></a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Theme setup
+    const savedTheme = localStorage.getItem("sms_app_theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    const themeIcon = document.getElementById("themeIcon");
+    if (themeIcon) {
+      themeIcon.className = savedTheme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    }
+
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("sms_app_theme", newTheme);
+        if (themeIcon) {
+          themeIcon.className = newTheme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+        }
+      });
+    }
+
+    // Toggle Password Visibility
+    const togglePwdBtn = document.getElementById("togglePwdBtn");
+    const authPassword = document.getElementById("authPassword");
+    const togglePwdIcon = document.getElementById("togglePwdIcon");
+    if (togglePwdBtn && authPassword && togglePwdIcon) {
+      togglePwdBtn.addEventListener("click", () => {
+        if (authPassword.type === "password") {
+          authPassword.type = "text";
+          togglePwdIcon.className = "fa-regular fa-eye-slash";
+        } else {
+          authPassword.type = "password";
+          togglePwdIcon.className = "fa-regular fa-eye";
+        }
+      });
+    }
+
+    // Autofill with existing user if available
+    const authUsername = document.getElementById("authUsername");
+    const existingUser = localStorage.getItem("sms_user_name");
+    if (existingUser && authUsername) {
+      authUsername.value = existingUser;
+    }
+
+    // Perform Login Function
+    function performLogin(userName) {
+      const cleanName = (userName && userName.trim()) ? userName.trim() : "Admin";
+      
+      // Save credentials in browser storage
+      localStorage.setItem("sms_user_name", cleanName);
+      localStorage.setItem("sms_is_authenticated", "true");
+      localStorage.setItem("sms_last_login", new Date().toISOString());
+
+      // Update button state
+      const submitBtn = document.getElementById("loginSubmitBtn");
+      const btnText = document.getElementById("btnText");
+      const btnIcon = document.getElementById("btnIcon");
+      if (submitBtn && btnText && btnIcon) {
+        submitBtn.disabled = true;
+        btnText.textContent = "Signed in as " + cleanName + "...";
+        btnIcon.className = "fa-solid fa-spinner fa-spin";
+      }
+
+      // Smooth redirect
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 350);
+    }
+
+    // Handle Form Submit
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const enteredName = authUsername.value.trim() || "Admin";
+        performLogin(enteredName);
+      });
+    }
+
+    // Handle Quick Chip Clicks
+    document.querySelectorAll(".quick-user-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const targetUser = chip.getAttribute("data-user") || "Admin";
+        authUsername.value = targetUser;
+        authPassword.value = "demo123";
+        performLogin(targetUser);
+      });
+    });
+
+    // Skip to Dashboard link sets guest mode if not logged in
+    const skipLink = document.getElementById("skipToDashLink");
+    if (skipLink) {
+      skipLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!localStorage.getItem("sms_user_name")) {
+          localStorage.setItem("sms_user_name", "Guest");
+          localStorage.setItem("sms_is_authenticated", "true");
+        }
+        window.location.href = "dashboard.html";
+      });
+    }
+  </script>
+</body>
+</html>

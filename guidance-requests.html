@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidance Requests | Student Database Management System</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+  
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">Student System</span>
+          <span class="brand-sub">Database Management</span>
+        </div>
+      </div>
+      <button class="mobile-close-btn" id="closeSidebarBtn" aria-label="Close sidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">STUDENT DATABASE</div>
+      <a class="nav-item" href="dashboard.html">
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Dashboard</span>
+      </a>
+      <a class="nav-item" href="students.html">
+        <i class="fa-solid fa-users"></i>
+        <span>All Students</span>
+        <span class="nav-badge" id="navStudentBadge">0</span>
+      </a>
+      <a class="nav-item" href="add-student.html">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>Add Student</span>
+      </a>
+
+      <div class="nav-section-label">RESOURCES &amp; SUPPORT</div>
+      <a class="nav-item" href="career-guidance.html">
+        <i class="fa-solid fa-compass"></i>
+        <span>Career Guidance</span>
+      </a>
+      <a class="nav-item" href="interview-experiences.html">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Interview Stories</span>
+      </a>
+      <a class="nav-item" href="mentors.html">
+        <i class="fa-solid fa-user-tie"></i>
+        <span>Mentors</span>
+      </a>
+      <a class="nav-item active" href="guidance-requests.html">
+        <i class="fa-solid fa-comments"></i>
+        <span>Guidance Requests</span>
+        <span class="nav-badge badge-warning" id="navRequestBadge">0</span>
+      </a>
+
+      <div class="nav-section-label">ACCOUNT</div>
+      <a class="nav-item" href="login.html" id="sidebarLogoutLink">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Switch User / Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="help-box">
+        <h4>Student Database</h4>
+        <p>Easily store, search, update and manage all student records.</p>
+      </div>
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <span>Database Online</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+    
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle-btn" id="openSidebarBtn" aria-label="Open sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="breadcrumbs">
+          <span class="crumb-root"><i class="fa-solid fa-graduation-cap"></i> Student Management System</span>
+          <span class="crumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+          <span class="crumb-active">Guidance Requests</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="globalSearchInput" placeholder="Search requests...">
+        </div>
+
+        <button class="icon-button" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle dark/light theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <div class="profile-pill" title="Signed in as current user">
+          <div class="avatar-badge">A</div>
+          <span class="user-name">Admin</span>
+          <a href="login.html" class="profile-logout-btn" id="headerLogoutBtn" title="Switch User / Logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content-padding">
+      
+      <div class="page-header-flex">
+        <div>
+          <h1 class="page-title">Student Guidance Requests</h1>
+          <p class="page-subtitle">Manage student questions, support tickets, and guidance inquiries.</p>
+        </div>
+      </div>
+
+      <div class="guidance-grid">
+        
+        <!-- Left: Form -->
+        <div class="guidance-form-card">
+          <div class="form-card-header">
+            <div class="icon-circle bg-primary-soft">
+              <i class="fa-solid fa-paper-plane text-primary"></i>
+            </div>
+            <div>
+              <h3>Submit New Request</h3>
+              <p>Add a student inquiry to the list.</p>
+            </div>
+          </div>
+
+          <form id="guidanceForm" onsubmit="return false;">
+            <div class="form-group">
+              <label for="reqStudentName">Student Name <span class="required">*</span></label>
+              <input type="text" id="reqStudentName" placeholder="e.g. Rahul Sharma" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reqEmail">Email Address <span class="required">*</span></label>
+                <input type="email" id="reqEmail" placeholder="e.g. rahul@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="reqDepartment">Course / Branch</label>
+                <select id="reqDepartment">
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Data Science">Data Science</option>
+                  <option value="AI & Machine Learning">AI &amp; ML</option>
+                  <option value="Electronics & Comm">Electronics</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reqType">Request Type <span class="required">*</span></label>
+              <select id="reqType">
+                <option value="Career Guidance">Career Guidance</option>
+                <option value="Resume Review">Resume Review</option>
+                <option value="Interview Help">Interview Preparation</option>
+                <option value="Course Selection">Course Selection</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reqMessage">Question or Details <span class="required">*</span></label>
+              <textarea id="reqMessage" rows="3" placeholder="Write question or support details..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submitRequestBtn">
+              <i class="fa-solid fa-paper-plane"></i> Submit Request
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Tickets List -->
+        <div class="guidance-tickets-card">
+          <div class="tickets-card-header">
+            <div>
+              <h3>Submitted Requests</h3>
+              <p>Manage and update active student tickets.</p>
+            </div>
+            
+            <div class="ticket-status-tabs" id="ticketStatusFilter">
+              <button class="status-tab-btn active" data-status="all">All</button>
+              <button class="status-tab-btn" data-status="Pending">Pending</button>
+              <button class="status-tab-btn" data-status="In Review">In Review</button>
+              <button class="status-tab-btn" data-status="Resolved">Resolved</button>
+            </div>
+          </div>
+
+          <div class="tickets-list" id="guidanceTicketsList"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <b>Student Database Management System</b>
+          </div>
+          <p>Simple and direct system to manage student records and guidance.</p>
+        </div>
+        <div class="footer-links">
+          <span>Student Management System</span>
+          <span class="footer-sep">•</span>
+          <span>Version 2.0</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

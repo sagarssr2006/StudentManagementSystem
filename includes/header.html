@@ -1,0 +1,33 @@
+<!-- ===== TOPBAR ===== -->
+<div class="topbar-left">
+  <button class="menu-toggle-btn" id="openSidebarBtn" aria-label="Open sidebar">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="breadcrumbs">
+    <span class="crumb-root"><i class="fa-solid fa-graduation-cap"></i> Student Management System</span>
+    <span class="crumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+    <span class="crumb-active" id="pageBreadcrumb">Dashboard</span>
+  </div>
+</div>
+
+<div class="topbar-right">
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="globalSearchInput" placeholder="Search students, courses...">
+  </div>
+
+  <!-- Theme Toggle -->
+  <button class="icon-button" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle dark/light theme">
+    <i class="fa-solid fa-moon" id="themeIcon"></i>
+  </button>
+
+  <!-- Simple Profile Pill with Quick Logout -->
+  <div class="profile-pill" title="Signed in as current user">
+    <div class="avatar-badge">A</div>
+    <span class="user-name">Admin</span>
+    <a href="login.html" class="profile-logout-btn" id="headerLogoutBtn" title="Switch User / Logout">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+  </div>
+</div>
