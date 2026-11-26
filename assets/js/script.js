@@ -359,7 +359,7 @@
   const State = {
     students: Storage.get("sms_student_db", DEFAULT_STUDENTS),
     requests: Storage.get("sms_request_db", DEFAULT_REQUESTS),
-    theme: localStorage.getItem("sms_app_theme") || "light",
+    theme: localStorage.getItem("sms_app_theme") || "dark",
     activeDeptFilter: "all",
     activeCareerFilter: "all",
     activeMentorFilter: "all",
@@ -506,10 +506,18 @@
   }
 
   /* --------------------------------------------------------------------------
+     4b. HERO LIVE STATS
+     -------------------------------------------------------------------------- */
+  function initHeroStats() {
+    if ($("heroLiveCount")) $("heroLiveCount").textContent = State.students.length;
+  }
+
+  /* --------------------------------------------------------------------------
      5. DASHBOARD COUNTERS & RECENT STUDENTS
      -------------------------------------------------------------------------- */
   function renderDashboard() {
     if ($("dashStudentCount")) $("dashStudentCount").textContent = State.students.length;
+    if ($("heroLiveCount")) $("heroLiveCount").textContent = State.students.length;
     if ($("dashRequestCount")) $("dashRequestCount").textContent = State.requests.length;
     if ($("navStudentBadge")) $("navStudentBadge").textContent = State.students.length;
     if ($("navRequestBadge")) $("navRequestBadge").textContent = State.requests.length;
@@ -1136,6 +1144,7 @@
     applyUserProfile();
     bindEvents();
     initSlideshow();
+    initHeroStats();
     renderDashboard();
     renderStudentsTable();
     renderCareerCards();

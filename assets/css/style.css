@@ -7,50 +7,58 @@
    1. DESIGN TOKENS (LIGHT & DARK THEMES)
    -------------------------------------------------------------------------- */
 :root {
-  /* Brand Palette (Royal Blue & Modern Slate) */
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-light: #eff6ff;
-  --primary-glow: rgba(37, 99, 235, 0.2);
+  /* Brand Palette (Yellow & Royal Blue Theme - matching placement showcase) */
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --primary-dark: #b45309;
+  --primary-light: rgba(245, 158, 11, 0.15);
+  --primary-glow: rgba(245, 158, 11, 0.35);
 
-  --accent-amber: #d97706;
+  --brand-blue: #2563eb;
+  --brand-blue-hover: #1d4ed8;
+  --brand-blue-light: rgba(37, 99, 235, 0.15);
+  --brand-blue-glow: rgba(37, 99, 235, 0.35);
+  --accent-blue: #3b82f6;
+
+  --accent-amber: #f59e0b;
   --accent-amber-light: #fef3c7;
-  --accent-emerald: #059669;
+  --accent-yellow: #fbbf24;
+  --accent-emerald: #10b981;
   --accent-emerald-light: #ecfdf5;
-  --accent-purple: #7c3aed;
+  --accent-purple: #8b5cf6;
   --accent-purple-light: #f3e8ff;
-  --accent-rose: #e11d48;
+  --accent-rose: #f43f5e;
   --accent-rose-light: #ffe4e6;
 
-  /* Surfaces & Backgrounds (Light Mode) */
-  --bg-app: #f8fafc;
-  --bg-sidebar: #0f172a;
-  --bg-sidebar-hover: #1e293b;
-  --bg-sidebar-active: #334155;
-  --bg-card: #ffffff;
-  --bg-card-subtle: #f1f5f9;
-  --bg-input: #ffffff;
-  --bg-hover: #f8fafc;
-  --bg-overlay: rgba(15, 23, 42, 0.65);
+  /* Default Surface & Backgrounds (Dark Navy Blue - Same as in image) */
+  --bg-app: #080c14;
+  --bg-sidebar: #060910;
+  --bg-sidebar-hover: #0f172a;
+  --bg-sidebar-active: #17253d;
+  --bg-card: #0d1424;
+  --bg-card-subtle: #131e36;
+  --bg-input: #10192e;
+  --bg-hover: #162442;
+  --bg-overlay: rgba(5, 9, 17, 0.82);
 
   /* Typography Colors */
-  --text-main: #0f172a;
-  --text-secondary: #475569;
+  --text-main: #f8fafc;
+  --text-secondary: #94a3b8;
   --text-muted: #64748b;
   --text-white: #ffffff;
-  --text-on-dark: #f1f5f9;
+  --text-on-dark: #f8fafc;
 
   /* Borders & Dividers */
-  --border-light: #e2e8f0;
-  --border-card: #e2e8f0;
-  --border-focus: #2563eb;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(59, 130, 246, 0.16);
+  --border-focus: #f59e0b;
 
   /* Shadows */
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
-  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.5), 0 2px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 20px -3px rgba(0, 0, 0, 0.6), 0 4px 8px -4px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 24px 35px -5px rgba(0, 0, 0, 0.7), 0 8px 14px -6px rgba(0, 0, 0, 0.5);
 
   /* Fonts */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -66,36 +74,77 @@
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Dark Mode Tokens */
+/* Explicit Dark Mode Tokens (Same Yellow & Blue Palette) */
 [data-theme="dark"] {
-  --bg-app: #090d16;
+  --bg-app: #080c14;
   --bg-sidebar: #060910;
-  --bg-sidebar-hover: #111827;
-  --bg-sidebar-active: #1f2937;
-  --bg-card: #111827;
-  --bg-card-subtle: #1e293b;
-  --bg-input: #172033;
-  --bg-hover: #1b263b;
-  --bg-overlay: rgba(0, 0, 0, 0.82);
+  --bg-sidebar-hover: #0f172a;
+  --bg-sidebar-active: #17253d;
+  --bg-card: #0d1424;
+  --bg-card-subtle: #131e36;
+  --bg-input: #10192e;
+  --bg-hover: #162442;
+  --bg-overlay: rgba(0, 0, 0, 0.85);
 
   --text-main: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   --text-white: #ffffff;
 
-  --border-light: #1e293b;
-  --border-card: #1e293b;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(59, 130, 246, 0.16);
+  --border-focus: #f59e0b;
 
-  --primary-light: rgba(37, 99, 235, 0.15);
-  --accent-amber-light: rgba(217, 119, 6, 0.15);
-  --accent-emerald-light: rgba(5, 150, 105, 0.15);
-  --accent-purple-light: rgba(124, 58, 237, 0.15);
-  --accent-rose-light: rgba(225, 29, 72, 0.15);
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --primary-light: rgba(245, 158, 11, 0.15);
+  --primary-glow: rgba(245, 158, 11, 0.35);
 
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px 0 rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 24px 38px -6px rgba(0, 0, 0, 0.6);
+  --brand-blue: #2563eb;
+  --accent-blue: #3b82f6;
+  --accent-yellow: #fbbf24;
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px 0 rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 14px 28px -4px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 24px 42px -6px rgba(0, 0, 0, 0.7);
+}
+
+/* Light Mode Tokens (Maintains Yellow & Blue Brand Colors) */
+[data-theme="light"] {
+  --bg-app: #f4f7fc;
+  --bg-sidebar: #090f20;
+  --bg-sidebar-hover: #121d3b;
+  --bg-sidebar-active: #1a2a4e;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f0f4fa;
+  --bg-input: #ffffff;
+  --bg-hover: #f1f5f9;
+  --bg-overlay: rgba(15, 23, 42, 0.65);
+
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-white: #ffffff;
+
+  --border-light: #e2e8f0;
+  --border-card: #cbd5e1;
+  --border-focus: #f59e0b;
+
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --primary-light: #fef3c7;
+  --primary-glow: rgba(245, 158, 11, 0.25);
+
+  --brand-blue: #2563eb;
+  --accent-blue: #3b82f6;
+  --accent-yellow: #fbbf24;
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
 /* --------------------------------------------------------------------------
@@ -201,14 +250,14 @@ button, input, select, textarea {
 .logo-icon {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  background: linear-gradient(135deg, #f59e0b 0%, #2563eb 100%);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   font-size: 20px;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
 }
 
 .logo-text {
@@ -285,14 +334,14 @@ button, input, select, textarea {
 }
 
 .nav-item.active {
-  background: linear-gradient(90deg, rgba(37, 99, 235, 0.2), rgba(37, 99, 235, 0.05));
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.16) 0%, rgba(37, 99, 235, 0.1) 100%);
   color: #ffffff;
   border-left: 3px solid var(--primary);
   font-weight: 700;
 }
 
 .nav-item.active i {
-  color: #60a5fa;
+  color: #fbbf24;
 }
 
 .nav-badge {
@@ -2488,14 +2537,18 @@ button, input, select, textarea {
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
   color: #ffffff;
-  box-shadow: 0 2px 6px var(--primary-glow);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px var(--primary-glow);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
-  box-shadow: 0 4px 12px var(--primary-glow);
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  transform: translateY(-1px);
+  color: #ffffff;
 }
 
 .btn-secondary {
@@ -3323,15 +3376,16 @@ textarea {
   min-height: 100vh;
   background-color: var(--bg-app);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 24px 16px;
+  justify-content: space-between;
+  padding: 32px 0 0 0;
   position: relative;
   overflow-x: hidden;
 }
 
 [data-theme="dark"] .auth-body {
-  background: radial-gradient(circle at 50% 20%, #1e293b 0%, #0f172a 100%);
+  background: radial-gradient(ellipse at 50% 15%, #0f1c38 0%, #080c14 100%);
 }
 
 .auth-ambient-bg {
@@ -3361,9 +3415,9 @@ textarea {
 }
 
 .auth-orb-2 {
-  width: 350px;
-  height: 350px;
-  background: var(--accent-purple);
+  width: 380px;
+  height: 380px;
+  background: var(--brand-blue);
   bottom: -50px;
   left: -50px;
 }
@@ -3669,6 +3723,355 @@ textarea {
 
 .auth-footer-link a:hover {
   text-decoration: underline;
+}
+
+/* ==========================================================================
+   STUDENT MANAGEMENT SYSTEM (SMS) HERO BANNER & UI
+   (Yellow & Blue Theme - Clean, Friendly & Easy to Understand)
+   ========================================================================== */
+
+.sms-hero-card {
+  position: relative;
+  width: 100%;
+  background: radial-gradient(ellipse 90% 80% at 15% 10%, rgba(37, 99, 235, 0.2), transparent 70%),
+              radial-gradient(ellipse 70% 70% at 85% 85%, rgba(245, 158, 11, 0.12), transparent 60%),
+              #0c1017;
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  border-radius: var(--radius-lg);
+  padding: 38px 44px;
+  margin-bottom: 20px;
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .sms-hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+}
+
+.sms-hero-content {
+  flex: 1;
+  max-width: 680px;
+}
+
+.sms-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #93c5fd;
+  margin-bottom: 16px;
+}
+
+.sms-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.sms-hero-title {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+}
+
+@media (max-width: 600px) {
+  .sms-hero-title {
+    font-size: 28px;
+  }
+}
+
+.hero-highlight-amber {
+  color: #f59e0b;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.35));
+}
+
+.sms-hero-subtitle {
+  font-size: 15.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.sms-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-lg {
+  padding: 12px 22px;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 9999px;
+}
+
+.btn-outline-blue {
+  background: rgba(37, 99, 235, 0.12);
+  border: 1.5px solid rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline-blue:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-outline-amber {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline-amber:hover {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #0b0f19;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+.sms-hero-highlights {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.text-amber {
+  color: #f59e0b;
+}
+
+.text-blue {
+  color: #38bdf8;
+}
+
+/* Right Graphic Stat Card */
+.sms-hero-graphic {
+  flex-shrink: 0;
+}
+
+.sms-graphic-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.graphic-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.graphic-stat-num {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 800;
+  color: #f59e0b;
+  line-height: 1.1;
+  text-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
+}
+
+.graphic-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.graphic-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   COMPANIES LOGOS SLIDESHOW MARQUEE STRIPE
+   ("below a same stripe with companies logos moving in slideshow")
+   ========================================================================== */
+
+.companies-slideshow-stripe {
+  background: #070b13;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stripe-label {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #64748b;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stripe-marquee-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%);
+}
+
+.stripe-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: marqueeTicker 36s linear infinite;
+  will-change: transform;
+}
+
+.stripe-marquee-container:hover .stripe-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeTicker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Company Badge Card */
+.company-badge-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  height: 40px;
+  box-sizing: border-box;
+  color: #f1f5f9;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  user-select: none;
+  cursor: default;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.company-badge-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Custom Company Logos */
+.qikfox-pill-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #dc2626;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(220, 38, 38, 0.7);
+}
+
+.qikfox-text {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tcs-badge-accent {
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  font-weight: 800;
+  padding: 1px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.cadence-brand {
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.cadence-accent {
+  color: #dc2626;
+  font-weight: 800;
 }
 
 
